@@ -1,0 +1,22 @@
+{
+    "rooms": {
+        "page_title": "Cabins - Arrrbnb"
+    },
+
+    "header": {
+        "title": "Arrrbnb",
+        "amount_starred_rooms": "{numStarredRooms, plural, =0 {0 starred cabins} =1 {1 starred cabin} other {# starred cabins}}"
+    },
+
+    "room_rentable": {
+        "featured": "Featured"
+    },
+    "room_advertised": {
+        "ad": "Ad"
+    },
+    "room_purchasable": {
+        "buy": "Buy at"
+    },
+
+    "create_room_page_title": "Add a rentable cabin - Arrrbnb"
+}

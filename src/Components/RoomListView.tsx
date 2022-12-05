@@ -5,15 +5,14 @@ import RoomTypePurchasable from "./RoomTypePurchasable";
 
 type Props = {
   rooms: Array<Room>,
-  onStarred: (id: Id) => void
 };
 
-export default function RoomListView({rooms, onStarred}: Props) {
+export default function RoomListView({rooms}: Props) {
   return (
     <>
       {rooms.map((room) => {
         if (room.type === "rentable") {
-          return <RoomTypeRentable key={room.id} room={room} onStarred={onStarred}/>
+          return <RoomTypeRentable key={room.id} room={room} />
         }
 
         if (room.type === "purchasable") {

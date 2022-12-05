@@ -1,7 +1,6 @@
 import clsx from "clsx"
 import { HTMLAttributes} from "react"
 
-
 type Props = HTMLAttributes<HTMLElement> & {
     portraitUrl: string,
     variant?: "sessionUser" | "owner",
@@ -10,6 +9,7 @@ type Props = HTMLAttributes<HTMLElement> & {
 export default function Avatar({portraitUrl, variant="owner", children, className, ...rest}: Props) {
 
     return <>
+    <picture>
         <img src={portraitUrl}
             alt=""
             className={clsx(
@@ -20,8 +20,9 @@ export default function Avatar({portraitUrl, variant="owner", children, classNam
                 }[variant],
                 "rounded-full inline"
             )}
-            {...rest}
+          {...rest}
         />
         {children}
+    </picture>
     </>
 }

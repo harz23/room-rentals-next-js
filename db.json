@@ -1,274 +1,276 @@
 {
-    "sessionUser": {
-      "id": 0,
-      "firstName": "Susan",
-      "lastName": "Taylor",
-      "portraitUrl": "https://i.pravatar.cc/300?img=35",
-      "starredRooms": [3]
-    },
-    "rooms": [
-      {
-        "id": 0,
-        "owner": {
-          "id": 1,
-          "firstName": "Jane",
-          "lastName": "Wilson",
-          "portraitUrl": "https://i.pravatar.cc/300?img=21"
-        },
-        "type": "rentable",
-        "title": "Cozy cabin on large boat",
-        "description": "Two double cabins with private bathroom and shower for exclusive use.",
-        "heroUrl": "https://c.pxhere.com/photos/5f/c8/galleon_ship_moored_sail_vessel_nautical_transportation_boat-553557.jpg!d"
-      },
-      {
-        "id": 1,
-        "featured": true,
-        "owner": {
-          "id": 3,
-          "firstName": "Jamie",
-          "lastName": "Reynolds",
-          "portraitUrl": "https://i.pravatar.cc/300?img=30"
-        },
-        "type": "rentable",
-        "title": "Shared \"room\" on small boat",
-        "description": "Small boat, big heart. A great opportunity to meet people.",
-        "heroUrl": "https://c.pxhere.com/photos/f4/3e/boat_pier_docked_dock_water_sea_nature_summer-875419.jpg!d"
-      },
-      {
-        "id": 2,
-        "owner": {
-          "id": 2,
-          "firstName": "Jack",
-          "lastName": "Anderson",
-          "portraitUrl": "https://i.pravatar.cc/300?img=13"
-        },
-        "type": "advertised",
-        "title": "Private, cozy room on large sailing boat",
-        "description": "Experience your own custom sailing excursion for up to 6 people to stunning secluded beaches and enjoy your summer time.",
-        "heroUrl": "https://c.pxhere.com/photos/83/4b/ship_tall_frigate_historic_uss_constitution_old_ironsides_vessel_american-1330097.jpg!d"
-      },
-      {
-        "id": 3,
-        "featured": true,
-        "owner": {
-          "id": 4,
-          "firstName": "Ryan",
-          "lastName": "Taylor",
-          "portraitUrl": "https://i.pravatar.cc/300?img=7"
-        },
-        "type": "rentable",
-        "title": "Classic vessel with private cabin",
-        "description": "Wake up to another city every day and enjoy some time on the sea.",
-        "heroUrl": "https://c.pxhere.com/photos/7e/ee/sailing_boat_mastes_rigging_boat_sail_sea_ship_yacht-680903.jpg!d"
-      },
-      {
-        "id": 4,
-        "owner": {
-          "id": 1,
-          "firstName": "Jane",
-          "lastName": "Wilson",
-          "portraitUrl": "https://i.pravatar.cc/300?img=21"
-        },
-        "type": "rentable",
-        "title": "Cozy cabin on large boat",
-        "description": "Two double cabins with private bathroom and shower for exclusive use.",
-        "heroUrl": "https://c.pxhere.com/photos/5f/c8/galleon_ship_moored_sail_vessel_nautical_transportation_boat-553557.jpg!d"
-      },
-      {
-        "id": 5,
-        "title": "Large boat for sale",
-        "type": "purchasable",
-        "description": "Great for spending time on the sea.",
-        "heroUrl": "https://c.pxhere.com/photos/5f/c8/galleon_ship_moored_sail_vessel_nautical_transportation_boat-553557.jpg!d",
-        "price": {
-          "amount": 1900000,
-          "currency": "USD"
-        }
-      },
-      {
-        "id": 6,
-        "owner": {
-          "id": 2,
-          "firstName": "Jack",
-          "lastName": "Anderson",
-          "portraitUrl": "https://i.pravatar.cc/300?img=13"
-        },
-        "type": "rentable",
-        "title": "Private, cozy room on large sailing boat",
-        "description": "Experience your own custom sailing excursion for up to 6 people to stunning secluded beaches.",
-        "heroUrl": "https://c.pxhere.com/photos/83/4b/ship_tall_frigate_historic_uss_constitution_old_ironsides_vessel_american-1330097.jpg!d"
-      },
-      {
-        "id": 7,
-        "featured": true,
-        "owner": {
-          "id": 4,
-          "firstName": "Ryan",
-          "lastName": "Taylor",
-          "portraitUrl": "https://i.pravatar.cc/300?img=7"
-        },
-        "type": "rentable",
-        "title": "Classic vessel with private cabin",
-        "description": "Wake up to another city every day and enjoy some time on the sea.",
-        "heroUrl": "https://c.pxhere.com/photos/7e/ee/sailing_boat_mastes_rigging_boat_sail_sea_ship_yacht-680903.jpg!d"
-      },
-      {
-        "id": 8,
-        "owner": {
-          "id": 1,
-          "firstName": "Jane",
-          "lastName": "Wilson",
-          "portraitUrl": "https://i.pravatar.cc/300?img=21"
-        },
-        "type": "rentable",
-        "title": "Cozy cabin on large boat",
-        "description": "Two double cabins with private bathroom and shower for exclusive use.",
-        "heroUrl": "https://c.pxhere.com/photos/5f/c8/galleon_ship_moored_sail_vessel_nautical_transportation_boat-553557.jpg!d"
-      },
-      {
-        "id": 9,
-        "featured": true,
-        "owner": {
-          "id": 3,
-          "firstName": "Jamie",
-          "lastName": "Reynolds",
-          "portraitUrl": "https://i.pravatar.cc/300?img=30"
-        },
-        "type": "rentable",
-        "title": "Shared \"room\" on small boat",
-        "description": "Small boat, big heart. A great opportunity to meet people.",
-        "heroUrl": "https://c.pxhere.com/photos/f4/3e/boat_pier_docked_dock_water_sea_nature_summer-875419.jpg!d"
-      },
-      {
-        "id": 10,
-        "title": "Large boat for sale",
-        "type": "purchasable",
-        "description": "Great for spending time on the sea.",
-        "heroUrl": "https://c.pxhere.com/photos/5f/c8/galleon_ship_moored_sail_vessel_nautical_transportation_boat-553557.jpg!d",
-        "price": {
-          "amount": 1900000,
-          "currency": "USD"
-        }
-      },
-      {
-        "id": 11,
-        "featured": true,
-        "owner": {
-          "id": 4,
-          "firstName": "Ryan",
-          "lastName": "Taylor",
-          "portraitUrl": "https://i.pravatar.cc/300?img=7"
-        },
-        "type": "rentable",
-        "title": "Classic vessel with private cabin",
-        "description": "Wake up to another city every day and enjoy some time on the sea.",
-        "heroUrl": "https://c.pxhere.com/photos/7e/ee/sailing_boat_mastes_rigging_boat_sail_sea_ship_yacht-680903.jpg!d"
-      },
-      {
-        "id": 12,
-        "owner": {
-          "id": 1,
-          "firstName": "Jane",
-          "lastName": "Wilson",
-          "portraitUrl": "https://i.pravatar.cc/300?img=21"
-        },
-        "type": "rentable",
-        "title": "Cozy cabin on large boat",
-        "description": "Two double cabins with private bathroom and shower for exclusive use.",
-        "heroUrl": "https://c.pxhere.com/photos/5f/c8/galleon_ship_moored_sail_vessel_nautical_transportation_boat-553557.jpg!d"
-      },
-      {
-        "id": 13,
-        "featured": true,
-        "owner": {
-          "id": 3,
-          "firstName": "Jamie",
-          "lastName": "Reynolds",
-          "portraitUrl": "https://i.pravatar.cc/300?img=30"
-        },
-        "type": "rentable",
-        "title": "Shared \"room\" on small boat",
-        "description": "Small boat, big heart. A great opportunity to meet people.",
-        "heroUrl": "https://c.pxhere.com/photos/f4/3e/boat_pier_docked_dock_water_sea_nature_summer-875419.jpg!d"
-      },
-      {
-        "id": 14,
-        "owner": {
-          "id": 2,
-          "firstName": "Jack",
-          "lastName": "Anderson",
-          "portraitUrl": "https://i.pravatar.cc/300?img=13"
-        },
-        "type": "rentable",
-        "title": "Private, cozy room on large sailing boat",
-        "description": "Experience your own custom sailing excursion for up to 6 people to stunning secluded beaches.",
-        "heroUrl": "https://c.pxhere.com/photos/83/4b/ship_tall_frigate_historic_uss_constitution_old_ironsides_vessel_american-1330097.jpg!d"
-      },
-      {
-        "id": 15,
-        "title": "Large boat for sale",
-        "type": "purchasable",
-        "description": "Great for spending time on the sea.",
-        "heroUrl": "https://c.pxhere.com/photos/5f/c8/galleon_ship_moored_sail_vessel_nautical_transportation_boat-553557.jpg!d",
-        "price": {
-          "amount": 1900000,
-          "currency": "USD"
-        }
-      },
-      {
-        "id": 16,
-        "owner": {
-          "id": 1,
-          "firstName": "Jane",
-          "lastName": "Wilson",
-          "portraitUrl": "https://i.pravatar.cc/300?img=21"
-        },
-        "type": "rentable",
-        "title": "Cozy cabin on large boat",
-        "description": "Two double cabins with private bathroom and shower for exclusive use.",
-        "heroUrl": "https://c.pxhere.com/photos/5f/c8/galleon_ship_moored_sail_vessel_nautical_transportation_boat-553557.jpg!d"
-      },
-      {
-        "id": 17,
-        "featured": true,
-        "owner": {
-          "id": 3,
-          "firstName": "Jamie",
-          "lastName": "Reynolds",
-          "portraitUrl": "https://i.pravatar.cc/300?img=30"
-        },
-        "type": "rentable",
-        "title": "Shared \"room\" on small boat",
-        "description": "Small boat, big heart. A great opportunity to meet people.",
-        "heroUrl": "https://c.pxhere.com/photos/f4/3e/boat_pier_docked_dock_water_sea_nature_summer-875419.jpg!d"
-      },
-      {
-        "id": 18,
-        "owner": {
-          "id": 2,
-          "firstName": "Jack",
-          "lastName": "Anderson",
-          "portraitUrl": "https://i.pravatar.cc/300?img=13"
-        },
-        "type": "rentable",
-        "title": "Private, cozy room on large sailing boat",
-        "description": "Experience your own custom sailing excursion for up to 6 people to stunning secluded beaches.",
-        "heroUrl": "https://c.pxhere.com/photos/83/4b/ship_tall_frigate_historic_uss_constitution_old_ironsides_vessel_american-1330097.jpg!d"
-      },
-      {
-        "id": 19,
-        "featured": true,
-        "owner": {
-          "id": 4,
-          "firstName": "Ryan",
-          "lastName": "Taylor",
-          "portraitUrl": "https://i.pravatar.cc/300?img=7"
-        },
-        "type": "rentable",
-        "title": "Classic vessel with private cabin",
-        "description": "Wake up to another city every day and enjoy some time on the sea.",
-        "heroUrl": "https://c.pxhere.com/photos/7e/ee/sailing_boat_mastes_rigging_boat_sail_sea_ship_yacht-680903.jpg!d"
-      }
+  "sessionUser": {
+    "id": 0,
+    "firstName": "Susan",
+    "lastName": "Taylor",
+    "portraitUrl": "https://i.pravatar.cc/300?img=35",
+    "starredRooms": [
+      0,
+      3
     ]
-  }
-  
+  },
+  "rooms": [
+    {
+      "id": 0,
+      "owner": {
+        "id": 1,
+        "firstName": "Jane",
+        "lastName": "Wilson",
+        "portraitUrl": "https://i.pravatar.cc/300?img=21"
+      },
+      "type": "rentable",
+      "title": "Cozy cabin on large boat",
+      "description": "Two double cabins with private bathroom and shower for exclusive use.",
+      "heroUrl": "https://c.pxhere.com/photos/5f/c8/galleon_ship_moored_sail_vessel_nautical_transportation_boat-553557.jpg!d"
+    },
+    {
+      "id": 1,
+      "featured": true,
+      "owner": {
+        "id": 3,
+        "firstName": "Jamie",
+        "lastName": "Reynolds",
+        "portraitUrl": "https://i.pravatar.cc/300?img=30"
+      },
+      "type": "rentable",
+      "title": "Shared \"room\" on small boat",
+      "description": "Small boat, big heart. A great opportunity to meet people.",
+      "heroUrl": "https://c.pxhere.com/photos/f4/3e/boat_pier_docked_dock_water_sea_nature_summer-875419.jpg!d"
+    },
+    {
+      "id": 2,
+      "owner": {
+        "id": 2,
+        "firstName": "Jack",
+        "lastName": "Anderson",
+        "portraitUrl": "https://i.pravatar.cc/300?img=13"
+      },
+      "type": "advertised",
+      "title": "Private, cozy room on large sailing boat",
+      "description": "Experience your own custom sailing excursion for up to 6 people to stunning secluded beaches and enjoy your summer time.",
+      "heroUrl": "https://c.pxhere.com/photos/83/4b/ship_tall_frigate_historic_uss_constitution_old_ironsides_vessel_american-1330097.jpg!d"
+    },
+    {
+      "id": 3,
+      "featured": true,
+      "owner": {
+        "id": 4,
+        "firstName": "Ryan",
+        "lastName": "Taylor",
+        "portraitUrl": "https://i.pravatar.cc/300?img=7"
+      },
+      "type": "rentable",
+      "title": "Classic vessel with private cabin",
+      "description": "Wake up to another city every day and enjoy some time on the sea.",
+      "heroUrl": "https://c.pxhere.com/photos/7e/ee/sailing_boat_mastes_rigging_boat_sail_sea_ship_yacht-680903.jpg!d"
+    },
+    {
+      "id": 4,
+      "owner": {
+        "id": 1,
+        "firstName": "Jane",
+        "lastName": "Wilson",
+        "portraitUrl": "https://i.pravatar.cc/300?img=21"
+      },
+      "type": "rentable",
+      "title": "Cozy cabin on large boat",
+      "description": "Two double cabins with private bathroom and shower for exclusive use.",
+      "heroUrl": "https://c.pxhere.com/photos/5f/c8/galleon_ship_moored_sail_vessel_nautical_transportation_boat-553557.jpg!d"
+    },
+    {
+      "id": 5,
+      "title": "Large boat for sale",
+      "type": "purchasable",
+      "description": "Great for spending time on the sea.",
+      "heroUrl": "https://c.pxhere.com/photos/5f/c8/galleon_ship_moored_sail_vessel_nautical_transportation_boat-553557.jpg!d",
+      "price": {
+        "amount": 1900000,
+        "currency": "USD"
+      }
+    },
+    {
+      "id": 6,
+      "owner": {
+        "id": 2,
+        "firstName": "Jack",
+        "lastName": "Anderson",
+        "portraitUrl": "https://i.pravatar.cc/300?img=13"
+      },
+      "type": "rentable",
+      "title": "Private, cozy room on large sailing boat",
+      "description": "Experience your own custom sailing excursion for up to 6 people to stunning secluded beaches.",
+      "heroUrl": "https://c.pxhere.com/photos/83/4b/ship_tall_frigate_historic_uss_constitution_old_ironsides_vessel_american-1330097.jpg!d"
+    },
+    {
+      "id": 7,
+      "featured": true,
+      "owner": {
+        "id": 4,
+        "firstName": "Ryan",
+        "lastName": "Taylor",
+        "portraitUrl": "https://i.pravatar.cc/300?img=7"
+      },
+      "type": "rentable",
+      "title": "Classic vessel with private cabin",
+      "description": "Wake up to another city every day and enjoy some time on the sea.",
+      "heroUrl": "https://c.pxhere.com/photos/7e/ee/sailing_boat_mastes_rigging_boat_sail_sea_ship_yacht-680903.jpg!d"
+    },
+    {
+      "id": 8,
+      "owner": {
+        "id": 1,
+        "firstName": "Jane",
+        "lastName": "Wilson",
+        "portraitUrl": "https://i.pravatar.cc/300?img=21"
+      },
+      "type": "rentable",
+      "title": "Cozy cabin on large boat",
+      "description": "Two double cabins with private bathroom and shower for exclusive use.",
+      "heroUrl": "https://c.pxhere.com/photos/5f/c8/galleon_ship_moored_sail_vessel_nautical_transportation_boat-553557.jpg!d"
+    },
+    {
+      "id": 9,
+      "featured": true,
+      "owner": {
+        "id": 3,
+        "firstName": "Jamie",
+        "lastName": "Reynolds",
+        "portraitUrl": "https://i.pravatar.cc/300?img=30"
+      },
+      "type": "rentable",
+      "title": "Shared \"room\" on small boat",
+      "description": "Small boat, big heart. A great opportunity to meet people.",
+      "heroUrl": "https://c.pxhere.com/photos/f4/3e/boat_pier_docked_dock_water_sea_nature_summer-875419.jpg!d"
+    },
+    {
+      "id": 10,
+      "title": "Large boat for sale",
+      "type": "purchasable",
+      "description": "Great for spending time on the sea.",
+      "heroUrl": "https://c.pxhere.com/photos/5f/c8/galleon_ship_moored_sail_vessel_nautical_transportation_boat-553557.jpg!d",
+      "price": {
+        "amount": 1900000,
+        "currency": "USD"
+      }
+    },
+    {
+      "id": 11,
+      "featured": true,
+      "owner": {
+        "id": 4,
+        "firstName": "Ryan",
+        "lastName": "Taylor",
+        "portraitUrl": "https://i.pravatar.cc/300?img=7"
+      },
+      "type": "rentable",
+      "title": "Classic vessel with private cabin",
+      "description": "Wake up to another city every day and enjoy some time on the sea.",
+      "heroUrl": "https://c.pxhere.com/photos/7e/ee/sailing_boat_mastes_rigging_boat_sail_sea_ship_yacht-680903.jpg!d"
+    },
+    {
+      "id": 12,
+      "owner": {
+        "id": 1,
+        "firstName": "Jane",
+        "lastName": "Wilson",
+        "portraitUrl": "https://i.pravatar.cc/300?img=21"
+      },
+      "type": "rentable",
+      "title": "Cozy cabin on large boat",
+      "description": "Two double cabins with private bathroom and shower for exclusive use.",
+      "heroUrl": "https://c.pxhere.com/photos/5f/c8/galleon_ship_moored_sail_vessel_nautical_transportation_boat-553557.jpg!d"
+    },
+    {
+      "id": 13,
+      "featured": true,
+      "owner": {
+        "id": 3,
+        "firstName": "Jamie",
+        "lastName": "Reynolds",
+        "portraitUrl": "https://i.pravatar.cc/300?img=30"
+      },
+      "type": "rentable",
+      "title": "Shared \"room\" on small boat",
+      "description": "Small boat, big heart. A great opportunity to meet people.",
+      "heroUrl": "https://c.pxhere.com/photos/f4/3e/boat_pier_docked_dock_water_sea_nature_summer-875419.jpg!d"
+    },
+    {
+      "id": 14,
+      "owner": {
+        "id": 2,
+        "firstName": "Jack",
+        "lastName": "Anderson",
+        "portraitUrl": "https://i.pravatar.cc/300?img=13"
+      },
+      "type": "rentable",
+      "title": "Private, cozy room on large sailing boat",
+      "description": "Experience your own custom sailing excursion for up to 6 people to stunning secluded beaches.",
+      "heroUrl": "https://c.pxhere.com/photos/83/4b/ship_tall_frigate_historic_uss_constitution_old_ironsides_vessel_american-1330097.jpg!d"
+    },
+    {
+      "id": 15,
+      "title": "Large boat for sale",
+      "type": "purchasable",
+      "description": "Great for spending time on the sea.",
+      "heroUrl": "https://c.pxhere.com/photos/5f/c8/galleon_ship_moored_sail_vessel_nautical_transportation_boat-553557.jpg!d",
+      "price": {
+        "amount": 1900000,
+        "currency": "USD"
+      }
+    },
+    {
+      "id": 16,
+      "owner": {
+        "id": 1,
+        "firstName": "Jane",
+        "lastName": "Wilson",
+        "portraitUrl": "https://i.pravatar.cc/300?img=21"
+      },
+      "type": "rentable",
+      "title": "Cozy cabin on large boat",
+      "description": "Two double cabins with private bathroom and shower for exclusive use.",
+      "heroUrl": "https://c.pxhere.com/photos/5f/c8/galleon_ship_moored_sail_vessel_nautical_transportation_boat-553557.jpg!d"
+    },
+    {
+      "id": 17,
+      "featured": true,
+      "owner": {
+        "id": 3,
+        "firstName": "Jamie",
+        "lastName": "Reynolds",
+        "portraitUrl": "https://i.pravatar.cc/300?img=30"
+      },
+      "type": "rentable",
+      "title": "Shared \"room\" on small boat",
+      "description": "Small boat, big heart. A great opportunity to meet people.",
+      "heroUrl": "https://c.pxhere.com/photos/f4/3e/boat_pier_docked_dock_water_sea_nature_summer-875419.jpg!d"
+    },
+    {
+      "id": 18,
+      "owner": {
+        "id": 2,
+        "firstName": "Jack",
+        "lastName": "Anderson",
+        "portraitUrl": "https://i.pravatar.cc/300?img=13"
+      },
+      "type": "rentable",
+      "title": "Private, cozy room on large sailing boat",
+      "description": "Experience your own custom sailing excursion for up to 6 people to stunning secluded beaches.",
+      "heroUrl": "https://c.pxhere.com/photos/83/4b/ship_tall_frigate_historic_uss_constitution_old_ironsides_vessel_american-1330097.jpg!d"
+    },
+    {
+      "id": 19,
+      "featured": true,
+      "owner": {
+        "id": 4,
+        "firstName": "Ryan",
+        "lastName": "Taylor",
+        "portraitUrl": "https://i.pravatar.cc/300?img=7"
+      },
+      "type": "rentable",
+      "title": "Classic vessel with private cabin",
+      "description": "Wake up to another city every day and enjoy some time on the sea.",
+      "heroUrl": "https://c.pxhere.com/photos/7e/ee/sailing_boat_mastes_rigging_boat_sail_sea_ship_yacht-680903.jpg!d"
+    }
+  ]
+}

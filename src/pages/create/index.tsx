@@ -1,29 +1,40 @@
 import { GetServerSidePropsContext, GetServerSidePropsResult } from "next";
 import db from "../../db";
-import { Collection, Room } from "../../types";
+import { Collection, SessionUser, Room } from "../../types";
 import Head from 'next/head'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
+import Header from "../../Components/Header";
 
 type Props = {
-  rooms: Collection<Room>;
+  rooms: Collection<Room>,
+  sessionUser: SessionUser
 };
 
 export default function Rooms({ rooms }: Props) {
+  const {i18n, t} = useTranslation("common");
+
+
   return <>
     <Head>
-      <title>Cabins - Arrrbnb</title>
+      <title>{t("create_room_page_title")}</title>
     </Head>
+
+  
     
     <p>Number of rooms: {rooms.nodes.length}</p>;
   </>
 }
 
 export async function getServerSideProps(
-  context: GetServerSidePropsContext
+  {locale}: any,
+  context: GetServerSidePropsContext,
 ): Promise<GetServerSidePropsResult<Props>> {
   const data = await db.read();
-
+  
   return {
     props: {
+      ...(await serverSideTranslations(locale, ['common'])),
       rooms: {
         nodes: data.rooms,
         page: {
@@ -32,6 +43,13 @@ export async function getServerSideProps(
           totalElements: data.rooms.length,
           totalPages: 1
         }
+      },
+      sessionUser: {
+        id: data.sessionUser.id,
+        firstName: data.sessionUser.firstName,
+        lastName: data.sessionUser.lastName,
+        portraitUrl: data.sessionUser.portraitUrl,
+        starredRooms: data.sessionUser.starredRooms
       }
     }
   };

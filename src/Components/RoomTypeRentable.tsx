@@ -5,16 +5,24 @@ import IconButton from "./Reusables/IconButton";
 import Thumbnail from "./Reusables/Thumbnail";
 import { useContext } from "react";
 import RoomLayout from "./Reusables/RoomLayout";
+import {I18nContext} from 'react-i18next'
+import { AuthContext } from "../pages/_app";
+import { StarService, HttpError } from "../services";
+import usePromised from "use-promised";
+import { useRouter } from "next/router";
 import clsx from 'clsx'
-import { AuthContext } from "../pages/rooms";
+import {useTranslations} from 'next-intl';
 
 type Props = {
-  room: RentableRoom,
-  onStarred: (id: Id) => void
+  room: RentableRoom
 };
 
-export default function RoomTypeRentable({room, onStarred}: Props) {
+export default function RoomTypeRentable({room}: Props) {
   const sessionUser = useContext(AuthContext)
+  const t = useTranslations('room_rentable');
+  const router = useRouter();
+
+  const [submitPromise, setSubmitPromise] = usePromised<boolean, HttpError>();
 
   return (
     <>
@@ -23,7 +31,7 @@ export default function RoomTypeRentable({room, onStarred}: Props) {
           <Thumbnail heroUrl={room.heroUrl} title={room.title}>
             {room.featured && (
               <div className="p-1 bg-white text-cyan-500 font-bold text-xs">
-                FEATURED
+                {t("featured").toUpperCase()}
               </div>
             )}
           </Thumbnail>
@@ -56,9 +64,14 @@ export default function RoomTypeRentable({room, onStarred}: Props) {
               </Text>
             </Avatar>
 
-
              <IconButton
-              onClick={() => onStarred(room.id)}
+              onClick={() => {
+                const promise = StarService.post(room.id)
+                                            .then(() => router.replace("/rooms"))
+                                            
+                setSubmitPromise(promise)
+              }
+            }
               aria-label="Like"
               className="absolute right-2 top-1"
             >

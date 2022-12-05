@@ -3,12 +3,15 @@ import Text from "./Reusables/Text";
 import Thumbnail from "./Reusables/Thumbnail";
 import { currencies } from "../exports";
 import RoomLayout from "./Reusables/RoomLayout";
+import {useTranslations} from 'next-intl';
 
 type Props = {
   room: PurchasableRoom;
 };
 
 export default function RoomTypePurchasable({ room }: Props) {
+  const t = useTranslations('room_purchasable');
+
   return (
     <>
       <RoomLayout
@@ -35,7 +38,7 @@ export default function RoomTypePurchasable({ room }: Props) {
           <>
             <div className="flex justify-end mr-2">
               <Text variant="p" className="mt-1">
-                Buy at &nbsp;
+                {t("buy")} &nbsp;
               </Text>
               <Text as="h5" variant="h5" color="primary" className="inline" >
                   <>
