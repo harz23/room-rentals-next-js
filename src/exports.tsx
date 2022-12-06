@@ -13,3 +13,5 @@ export const currencies: Array<currency> = [
     symbol: "$",
   },
 ];
+
+export const maxRoomsPerPage = 9

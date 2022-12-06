@@ -11,7 +11,7 @@ export default function App({ Component, pageProps }: AppProps) {
   AuthContext = createContext(pageProps.sessionUser);
   return <>
         <AuthContext.Provider value={pageProps.sessionUser} >
-          <NextIntlProvider messages={pageProps.translation}>
+          <NextIntlProvider locale="en" messages={pageProps.translation}>
             <Header/>
             <Component {...pageProps} />
           </NextIntlProvider>

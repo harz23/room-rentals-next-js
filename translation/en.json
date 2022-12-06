@@ -5,7 +5,9 @@
 
     "header": {
         "title": "Arrrbnb",
-        "amount_starred_rooms": "{numStarredRooms, plural, =0 {0 starred cabins} =1 {1 starred cabin} other {# starred cabins}}"
+        "amount_starred_rooms": "{numStarredRooms, plural, =0 {0 starred cabins} =1 {1 starred cabin} other {# starred cabins}}",
+        "cabins": "Cabins",
+        "add_cabin": "Add Cabin"
     },
 
     "room_rentable": {
@@ -18,5 +20,12 @@
         "buy": "Buy at"
     },
 
-    "create_room_page_title": "Add a rentable cabin - Arrrbnb"
+    "pagination": {
+        "text": "Page {curPage} of {maxPage} ({totalResults} results in total)"
+    },
+
+    "add_cabin": {
+        "create_cabin_page_title": "Add a rentable cabin - Arrrbnb",
+        "add_rentable_cabin": "Add rentable cabin"
+    }
 }

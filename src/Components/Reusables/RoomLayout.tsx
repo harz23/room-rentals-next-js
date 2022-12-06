@@ -11,11 +11,11 @@ type Props = {
 export default function RoomLayout({thumbnail, text, footer, bg_color = "white"}: Props) {
 
   return <>
-    <div>
+    <div >
     {thumbnail}
 
     <div className={clsx(
-      "shadow-md p-3 pb-2 pr-0 h-36", 
+      "shadow-md p-3 pb-2 pr-0 h-36 rounded-b-md", 
       {
         white: "",
         cyan: "bg-cyan-600"
@@ -30,7 +30,7 @@ export default function RoomLayout({thumbnail, text, footer, bg_color = "white"}
         <>
           <div className="border-t-2 mb-3 mt-3"/> 
 
-          <div className={"relative"}>
+          <div className="relative">
             {footer}
           </div>
         </>

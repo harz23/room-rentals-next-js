@@ -1,4 +1,4 @@
-import { Room, Id } from "../types";
+import { Room, Collection } from "../types";
 import RoomTypeAdvertised from "./RoomTypeAdvertised";
 import RoomTypeRentable from "./RoomTypeRentable";
 import RoomTypePurchasable from "./RoomTypePurchasable";
@@ -8,6 +8,7 @@ type Props = {
 };
 
 export default function RoomListView({rooms}: Props) {
+  
   return (
     <>
       {rooms.map((room) => {

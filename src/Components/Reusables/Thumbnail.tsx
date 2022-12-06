@@ -11,7 +11,7 @@ export default function Thumbnail({ heroUrl, title, children }: Props) {
     <>
       <div className="relative">
         <picture>
-          <img src={heroUrl} alt={title} className="h-52 w-64 object-cover"/>
+          <img src={heroUrl} alt={title} className="h-52 w-64 object-cover rounded-t-md"/>
         </picture>
         <div className="absolute top-2 right-2">{children}</div>
       </div>
