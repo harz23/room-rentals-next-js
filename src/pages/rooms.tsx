@@ -1,5 +1,5 @@
 import { GetServerSidePropsContext, GetServerSidePropsResult } from "next";
-import { Room, SessionUser } from "../types";
+import { Room, SessionUser, Collection } from "../types";
 import db from "../db";
 import Wrapper from "../Components/Wrapper";
 import RoomListView from "../Components/RoomListView";
@@ -8,16 +8,14 @@ import {useTranslations} from 'next-intl';
 import {NumberParam} from 'serialize-query-params';
 import paginate from "../Components/utils/paginate";
 import Pagination from "../Components/Pagination";
-import {maxRoomsPerPage}  from "../exports";
 
 type Props = {
   translation: any
-  rooms: Array<Room>,
-  totalresults: number,
+  rooms: Collection<Room>,
   sessionUser: SessionUser
 };
 
-export default function Rooms({ rooms, totalresults}: Props) {
+export default function Rooms({ rooms }: Props) {
   const t = useTranslations('rooms'); 
   
   return <>
@@ -26,9 +24,9 @@ export default function Rooms({ rooms, totalresults}: Props) {
     </Head>
     
     <Wrapper>
-      <RoomListView rooms={rooms} />
-    </Wrapper>   
-    <Pagination maxPage={Math.ceil(totalresults/maxRoomsPerPage)} totalResults={totalresults}/>
+      <RoomListView rooms={rooms.nodes} />
+    </Wrapper>
+    <Pagination collection={rooms.page}/>
   </>
 }
 
@@ -41,7 +39,6 @@ export async function getServerSideProps(context: GetServerSidePropsContext): Pr
           nodes: data.rooms,
           number: NumberParam.decode(context.query?.page) || 1
       }),
-      totalresults: data.rooms.length,
       sessionUser: {
         id: data.sessionUser.id,
         firstName: data.sessionUser.firstName,

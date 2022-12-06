@@ -3,7 +3,7 @@ import Text from "./Reusables/Text";
 import Thumbnail from "./Reusables/Thumbnail";
 import { currencies } from "../exports";
 import RoomLayout from "./Reusables/RoomLayout";
-import {useTranslations} from 'next-intl';
+import {useTranslations, useIntl} from 'next-intl';
 
 type Props = {
   room: PurchasableRoom;
@@ -11,6 +11,7 @@ type Props = {
 
 export default function RoomTypePurchasable({ room }: Props) {
   const t = useTranslations('room_purchasable');
+  const intl = useIntl();
 
   return (
     <>
@@ -36,14 +37,13 @@ export default function RoomTypePurchasable({ room }: Props) {
         }
         footer={
           <>
-            <div className="flex justify-end mr-2">
+            <div className="flex items-baseline justify-end pr-4">
               <Text variant="p" className="mt-1">
-                {t("buy")} &nbsp;
+                {t("buy")}
               </Text>
-              <Text as="h5" variant="h5" color="primary" className="inline" >
-                  <>
-                    {currencies.map(currency => {if(currency.name === room.price.currency) {return currency.symbol}})}
-                    {room.price.amount.toLocaleString()}
+              <Text as="h5" variant="h5" color="primary" className="inline ml-1" >
+                  <>  
+                    {intl.formatNumber(room.price.amount, {style: 'currency', currency: room.price.currency, maximumFractionDigits: 0} )}
                   </>
               </Text>
             </div>

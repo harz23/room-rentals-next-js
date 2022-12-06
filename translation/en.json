@@ -27,5 +27,10 @@
     "add_cabin": {
         "create_cabin_page_title": "Add a rentable cabin - Arrrbnb",
         "add_rentable_cabin": "Add rentable cabin"
+    },
+
+    "error": {
+        "NotFound": "Page not found",
+        "back": "Back to Home"
     }
 }

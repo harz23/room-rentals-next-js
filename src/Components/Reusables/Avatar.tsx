@@ -6,7 +6,7 @@ type Props = HTMLAttributes<HTMLElement> & {
     variant?: "sessionUser" | "owner",
 }
 
-export default function Avatar({portraitUrl, variant="owner", children, className, ...rest}: Props) {
+export default function Avatar({portraitUrl, variant="owner", className, ...rest}: Props) {
 
     return <>
     <picture>
@@ -22,7 +22,6 @@ export default function Avatar({portraitUrl, variant="owner", children, classNam
             )}
           {...rest}
         />
-        {children}
     </picture>
     </>
 }

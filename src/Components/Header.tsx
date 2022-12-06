@@ -13,19 +13,35 @@ export default function Header() {
     const router = useRouter();
 
     return <>
-      <div className="bg-gray-200 p-5">
-            <Text as="h2" variant="h2" className="ml-64 inline" >{t("title")}</Text>
-            
-            <Link href="/rooms?page=1" className={clsx(router.pathname === "/rooms" && "bg-gray-300", "p-2 rounded-md absolute right-1/2")}>{t("cabins")}</Link>
+    <div className="border-b bg-slate-100 py-4">
+      <div className="flex items-center justify-between m-auto max-w-4xl ">
+            <Text as="h2" variant="h2" className="inline" >{t("title")}</Text>
 
-            <Link href="/create" className={clsx(router.pathname === "/create" && "bg-gray-300", "p-2 rounded-md absolute left-1/2")}>{t("add_cabin")}</Link>
-            
-            <div className="absolute right-10 top-4">
-                <Avatar portraitUrl={sessionUser.portraitUrl} variant="sessionUser" className="float-left">
-                        <Text as="h5" variant="h5" className="ml-2 inline">{sessionUser.firstName} {sessionUser.lastName}</Text>
-                        <Text className="ml-12">{t("amount_starred_rooms", {numStarredRooms: sessionUser.starredRooms.length})}</Text>
-                </Avatar>
+            <div className="flex gap-2">
+                <Link href="/rooms" className={clsx(router.pathname === "/rooms" && "bg-gray-200", "p-2 rounded-md")}>
+                    <Text variant='navigation' className={clsx(router.pathname === "/rooms" && "font-semibold")}>
+                        {t("cabins")}
+                    </Text>
+                </Link>
+
+                <Link href="/create" className={clsx(router.pathname === "/create" && "bg-gray-200", "p-2 rounded-md")}>
+                    <Text variant='navigation' className={clsx(router.pathname === "/create" && "font-semibold")}>
+                        {t("add_cabin")}
+                    </Text>
+                </Link>
             </div>
+
+            { sessionUser !== undefined &&
+                <div className="flex items-center gap-2">
+                    <Avatar portraitUrl={sessionUser.portraitUrl} variant="sessionUser"/>
+                    
+                    <div>
+                        <Text as="h5" variant="h5" className="inline">{sessionUser.firstName} {sessionUser.lastName}</Text>
+                        <Text className="">{t("amount_starred_rooms", {numStarredRooms: sessionUser.starredRooms.length})}</Text>
+                    </div>
+                </div>
+            }
         </div>
+    </div>
     </>
 }

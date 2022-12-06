@@ -5,10 +5,9 @@ import { SessionUser } from "../types";
 import { createContext} from "react";
 import {NextIntlProvider} from 'next-intl';
 
-export let AuthContext : React.Context<SessionUser>
+export const AuthContext = createContext<SessionUser | undefined>(undefined);
 
-export default function App({ Component, pageProps }: AppProps) {
-  AuthContext = createContext(pageProps.sessionUser);
+export default function App({ Component, pageProps }: AppProps) {  
   return <>
         <AuthContext.Provider value={pageProps.sessionUser} >
           <NextIntlProvider locale="en" messages={pageProps.translation}>

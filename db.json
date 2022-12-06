@@ -5,8 +5,13 @@
     "lastName": "Taylor",
     "portraitUrl": "https://i.pravatar.cc/300?img=35",
     "starredRooms": [
+      8,
+      16,
+      6,
+      1,
       0,
-      3
+      4,
+      7
     ]
   },
   "rooms": [

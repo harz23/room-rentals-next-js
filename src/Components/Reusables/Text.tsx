@@ -3,7 +3,7 @@ import { ElementType, HTMLAttributes } from "react";
 
 type Props = HTMLAttributes<HTMLElement> & {
     as?: ElementType,
-    variant?: "h2" | "h5" | "title" | "p"
+    variant?: "h1" | "h2" | "h5" | "title" | "p" | "label" | "navigation"
     color?: "default" | "primary" | "secondary" | "white_gray" |"white"
 }
 
@@ -13,10 +13,13 @@ export default function Text({as: Component = "p", variant = "p", color = "defau
             className={clsx(
                 className,
                 {
+                    h1: "text-3xl font-bold",
                     h2: "text-2xl font-bold",
                     h5: "text-base font-bold",
                     title: "text-base font-semibold",
-                    p: "text-sm"
+                    navigation: "text-base",
+                    label: "text-base mb-2 font-semibold",
+                    p: "text-sm",
                 }[variant],
                 
                 {

@@ -30,7 +30,7 @@ export default function RoomLayout({thumbnail, text, footer, bg_color = "white"}
         <>
           <div className="border-t-2 mb-3 mt-3"/> 
 
-          <div className="relative">
+          <div className="flex flex-col justify-center ml-2">
             {footer}
           </div>
         </>
