@@ -8,8 +8,8 @@ export default async function handler(
   res: NextApiResponse
 ) {
   if (req.method !== "POST") {
-    res.status(StatusCodes.BAD_REQUEST);
-    res.json({ error: ReasonPhrases.BAD_REQUEST });
+    res.status(StatusCodes.METHOD_NOT_ALLOWED);
+    res.json({ error: ReasonPhrases.METHOD_NOT_ALLOWED });
     return;
   }
 

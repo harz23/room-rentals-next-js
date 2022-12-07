@@ -1,17 +1,57 @@
 import { GetServerSidePropsContext, GetServerSidePropsResult } from "next";
 import { useTranslations } from "next-intl";
 import Head from "next/head";
+import { useRouter } from "next/router";
+import { FormEvent, useContext, useEffect } from "react";
+import usePromised from "use-promised";
 import FormInput from "../../Components/Reusables/FormInput";
 import FormItem from "../../Components/Reusables/FormItem";
-import Switcher from "../../Components/Reusables/Switcher";
+import Switch from "../../Components/Reusables/Switch";
 import Text from "../../Components/Reusables/Text";
 import db from "../../db";
+import { AuthContext } from '../../pages/_app';
+import { HttpError, RoomService } from "../../services";
 
 type Props = {};
 
 export default function Rooms() {
+  const sessionUser = useContext(AuthContext)
   const t = useTranslations("add_cabin");
+  const router = useRouter();
 
+  const [submitPromise, setSubmitPromise] = usePromised<void, HttpError>();
+
+  function onSubmit(event: FormEvent) {
+    event.preventDefault();
+    const form = event.currentTarget as HTMLFormElement;
+
+    const formData = new FormData(form)
+
+    const input = {
+      "featured": formData.get("isFeatured")?.toString() === "on" ? true : false as boolean,
+      "owner": {
+        "id": sessionUser?.id,
+        "firstName": sessionUser?.firstName,
+        "lastName": sessionUser?.lastName,
+        "portraitUrl": sessionUser?.portraitUrl
+      },
+      "title": formData.get("title") as string,
+      "description": formData.get("description") as string,
+      "imageUrl": formData.get("imageUrl") as string
+    }
+
+    const promise = RoomService.post(input).then(() => form.reset())
+
+    setSubmitPromise(promise)
+  }
+
+  useEffect(() => {
+    if(submitPromise.fulfilled) {
+      router.push("/rooms")
+    }
+  }, [router, submitPromise])
+
+                  
   return (
     <>
       <Head>
@@ -23,29 +63,33 @@ export default function Rooms() {
           {t("add_rentable_cabin")}
         </Text>
 
-        <form className="mt-12">
+        <form className="mt-12" onSubmit={onSubmit}>
           <div className="grid grid-cols-2 gap-x-10 gap-y-5">
-            <FormItem labelText="URL">
-              <FormInput ariaLabel="URL"/>
+            <FormItem labelText={t("title")}>
+              <FormInput name="title" ariaLabel={t("title")} disabled={submitPromise.pending} />
             </FormItem>              
 
-            <FormItem labelText="Description">
-              <FormInput ariaLabel="Description"/>
+            <FormItem labelText={t("description")}>
+              <FormInput name="description" ariaLabel={t("description")} disabled={submitPromise.pending} />
             </FormItem>       
 
-            <FormItem labelText="Hero image URL">
-              <FormInput ariaLabel="Hero image URL"/>
+            <FormItem labelText={t("imageUrl")}>
+              <FormInput name="imageUrl" ariaLabel={t("imageUrl")} disabled={submitPromise.pending} />
             </FormItem>       
 
-            <FormItem labelText="Featured">
-              <Switcher/>
-            </FormItem>       
+            <FormItem labelText={t("featured")}>
+              <Switch name="isFeatured" ariaLabel={t("featureSwitch")} disabled={submitPromise.pending} />
+            </FormItem>     
 
             <button className="mt-10 py-2 rounded-md w-32 bg-cyan-600 text-white font-semibold">
-              Add cabin
+              {t("add_cabin")}
             </button>
           </div>
         </form>
+
+        <div className="mt-10">
+          {submitPromise.error && <Text>{t("error")} {submitPromise.error.status || "N/A"}</Text>}  
+        </div>
       </div>
     </>
   );

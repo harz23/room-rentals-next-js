@@ -5,16 +5,34 @@
     "lastName": "Taylor",
     "portraitUrl": "https://i.pravatar.cc/300?img=35",
     "starredRooms": [
-      8,
-      16,
+      14,
+      3,
       6,
-      1,
+      18,
+      17,
+      9,
+      7,
+      16,
+      13,
       0,
-      4,
-      7
+      1
     ]
   },
   "rooms": [
+    {
+      "id": 20,
+      "featured": false,
+      "owner": {
+        "id": 0,
+        "firstName": "Susan",
+        "lastName": "Taylor",
+        "portraitUrl": "https://i.pravatar.cc/300?img=35"
+      },
+      "type": "rentable",
+      "title": "Monkey Island ",
+      "description": "Guybrush Threepwood's ship in Return to Monkey Island",
+      "heroUrl": "https://c.pxhere.com/photos/5f/c8/galleon_ship_moored_sail_vessel_nautical_transportation_boat-553557.jpg!d"
+    },
     {
       "id": 0,
       "owner": {

@@ -1,8 +1,14 @@
-import {HTMLAttributes} from 'react'
+import {HTMLAttributes, ReactNode} from 'react'
+import clsx from 'clsx'
 
-export default function Wrapper({children}: HTMLAttributes<HTMLElement>) {
+type Props = {
+    isLoading: boolean,
+    children: ReactNode
+}
+
+export default function Wrapper({isLoading, children}: Props) {
     return <>
-        <div className="grid grid-cols-3 max-w-3xl gap-5 m-auto mt-12">
+        <div className={clsx("grid grid-cols-3 max-w-3xl gap-5 m-auto mt-12", isLoading && "opacity-50 pointer-events-none select-none")}>
             {children}
         </div>
     </>

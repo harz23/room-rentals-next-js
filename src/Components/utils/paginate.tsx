@@ -1,10 +1,11 @@
 import { Room, Collection } from "../../types";
-import {maxRoomsPerPage}  from "../../exports";
 
 type Props = {
     nodes: Array<Room>;
     number: number
 }
+
+const maxRoomsPerPage = 9
 
 export default function paginate({nodes, number}: Props) : Collection<Room> {
     const maxPage = Math.ceil(nodes.length / maxRoomsPerPage)

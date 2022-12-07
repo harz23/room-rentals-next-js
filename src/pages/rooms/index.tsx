@@ -1,13 +1,14 @@
 import { GetServerSidePropsContext, GetServerSidePropsResult } from "next";
-import { Room, SessionUser, Collection } from "../types";
-import db from "../db";
-import Wrapper from "../Components/Wrapper";
-import RoomListView from "../Components/RoomListView";
-import Head from 'next/head'
-import {useTranslations} from 'next-intl';
-import {NumberParam} from 'serialize-query-params';
-import paginate from "../Components/utils/paginate";
-import Pagination from "../Components/Pagination";
+import { useTranslations } from 'next-intl';
+import Head from 'next/head';
+import { useState } from "react";
+import { NumberParam } from 'serialize-query-params';
+import Pagination from "../../Components/Pagination";
+import RoomListView from "../../Components/RoomListView";
+import paginate from "../../Components/utils/paginate";
+import Wrapper from "../../Components/Wrapper";
+import db from "../../db";
+import { Collection, Room, SessionUser } from "../../types";
 
 type Props = {
   translation: any
@@ -16,17 +17,18 @@ type Props = {
 };
 
 export default function Rooms({ rooms }: Props) {
+  const [loading, setLoading] = useState(false);
   const t = useTranslations('rooms'); 
-  
+
   return <>
     <Head>
       <title>{t("page_title")}</title>
     </Head>
     
-    <Wrapper>
+    <Wrapper isLoading={loading}>
       <RoomListView rooms={rooms.nodes} />
     </Wrapper>
-    <Pagination collection={rooms.page}/>
+    <Pagination collection={rooms.page} setLoading={setLoading}/>
   </>
 }
 
@@ -34,7 +36,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext): Pr
   const data = await db.read();
   return {
     props: {
-      translation: (await import(`../../translation/${context.locale}.json`)).default,
+      translation: (await import(`../../../translation/${context.locale}.json`)).default,
       rooms: paginate({
           nodes: data.rooms,
           number: NumberParam.decode(context.query?.page) || 1

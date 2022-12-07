@@ -15,7 +15,10 @@ export default function Header() {
     return <>
     <div className="border-b bg-slate-100 py-4">
       <div className="flex items-center justify-between m-auto max-w-4xl ">
-            <Text as="h2" variant="h2" className="inline" >{t("title")}</Text>
+
+            <Link href="/rooms">
+                <Text as="h2" variant="h2" className="inline" >{t("title")}</Text>
+            </Link>
 
             <div className="flex gap-2">
                 <Link href="/rooms" className={clsx(router.pathname === "/rooms" && "bg-gray-200", "p-2 rounded-md")}>

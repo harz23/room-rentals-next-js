@@ -2,10 +2,14 @@ import { blackA } from "@radix-ui/colors";
 import * as Switch from "@radix-ui/react-switch";
 import { styled } from "@stitches/react";
 import { useTranslations } from "next-intl";
-import Text from "../../Components/Reusables/Text";
+import { ButtonHTMLAttributes } from "react";
 
+type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
+  name: string,
+  ariaLabel: string
+}
 
-export default function Switcher() {
+export default function Switcher({name, ariaLabel, ...rest}: Props) {
   const t = useTranslations("add_cabin");
 
   const SwitchRoot = styled(Switch.Root, {
@@ -38,7 +42,7 @@ export default function Switcher() {
 
   return (
     <>
-        <SwitchRoot id="airplane-mode">
+        <SwitchRoot id="airplane-mode" name={name} aria-label={ariaLabel} {...rest}>
             <SwitchThumb />
         </SwitchRoot>
     </>
