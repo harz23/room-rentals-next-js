@@ -1,14 +1,13 @@
-import { Room, Collection } from "../../types";
+import { Room } from "../../types";
 
 type Props = {
-    nodes: Array<Room>;
+    nodes: Array<any>,
+    size: number,
     number: number
 }
 
-const maxRoomsPerPage = 9
-
-export default function paginate({nodes, number}: Props) : Collection<Room> {
-    const maxPage = Math.ceil(nodes.length / maxRoomsPerPage)
+export default function paginate({nodes, size, number}: Props) {
+    const maxPage = Math.ceil(nodes.length / size)
 
     if(number < 1) {
         number = 1
@@ -17,22 +16,13 @@ export default function paginate({nodes, number}: Props) : Collection<Room> {
         number = maxPage
     }
 
-    let startIndex = (number * maxRoomsPerPage) - maxRoomsPerPage
-    let endIndex = (startIndex + maxRoomsPerPage) - 1
-
-    const rooms: Array<Room> = []
-
-    for(let i = startIndex; i <= endIndex && i < nodes.length; i++) {
-        rooms.push(nodes[i])
-    }
-
     return {
-        nodes: rooms,
+        nodes: nodes.slice((number * size) - size, (number * size)),
         page: {
           number: number,
-          size: maxRoomsPerPage,
+          size: size,
           totalElements: nodes.length,
-          totalPages: Math.ceil(nodes.length/maxRoomsPerPage),
+          totalPages: Math.ceil(nodes.length/size),
         },
     }
 }

@@ -39,6 +39,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext): Pr
       translation: (await import(`../../../translation/${context.locale}.json`)).default,
       rooms: paginate({
           nodes: data.rooms,
+          size: 9,
           number: NumberParam.decode(context.query?.page) || 1
       }),
       sessionUser: {

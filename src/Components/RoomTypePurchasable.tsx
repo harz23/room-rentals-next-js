@@ -1,9 +1,8 @@
+import { useIntl, useTranslations } from 'next-intl';
 import { PurchasableRoom } from "../types";
+import RoomLayout from "./Reusables/RoomLayout";
 import Text from "./Reusables/Text";
 import Thumbnail from "./Reusables/Thumbnail";
-import { currencies } from "../exports";
-import RoomLayout from "./Reusables/RoomLayout";
-import {useTranslations, useIntl} from 'next-intl';
 
 type Props = {
   room: PurchasableRoom;
