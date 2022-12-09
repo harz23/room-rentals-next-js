@@ -48,7 +48,7 @@ it('Add a featured new cabin', () => {
 });
 
 
-it('Add a featured new cabin', () => {
+it('Attempt to add a new cabin with an invalid URL', () => {
     cy.visit('/create');
 
     cy.findByLabelText('Title')
