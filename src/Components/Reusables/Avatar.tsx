@@ -4,14 +4,17 @@ import { HTMLAttributes} from "react"
 type Props = HTMLAttributes<HTMLElement> & {
     portraitUrl: string,
     variant?: "sessionUser" | "owner",
+    userName: string
 }
 
-export default function Avatar({portraitUrl, variant="owner", className, ...rest}: Props) {
+export default function Avatar({portraitUrl, variant="owner", userName, className, ...rest}: Props) {
 
     return <>
+    
     <picture>
         <img src={portraitUrl}
-            alt=""
+            alt={`Avatar of ${userName}`}
+            title={`Avatar of ${userName}`}
             className={clsx(
                 className,
                 {

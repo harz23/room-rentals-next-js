@@ -1,6 +1,21 @@
 {
     "rooms": {
-        "page_title": "Cabins - Arrrbnb"
+        "page_title": "Cabins - Arrrbnb",
+
+        "room_rentable": {
+            "featured": "Featured",
+            "star": "Star"
+        },
+        "room_advertised": {
+            "ad": "Ad"
+        },
+        "room_purchasable": {
+            "buy": "Buy at"
+        },
+    
+        "pagination": {
+            "text": "Page {curPage} of {maxPage} ({totalResults} results in total)"
+        }
     },
 
     "header": {
@@ -8,21 +23,7 @@
         "amount_starred_rooms": "{numStarredRooms, plural, =0 {0 starred cabins} =1 {1 starred cabin} other {# starred cabins}}",
         "cabins": "Cabins",
         "add_cabin": "Add cabin"
-    },
-
-    "room_rentable": {
-        "featured": "Featured"
-    },
-    "room_advertised": {
-        "ad": "Ad"
-    },
-    "room_purchasable": {
-        "buy": "Buy at"
-    },
-
-    "pagination": {
-        "text": "Page {curPage} of {maxPage} ({totalResults} results in total)"
-    },
+    },    
 
     "add_cabin": {
         "create_cabin_page_title": "Add a rentable cabin - Arrrbnb",
@@ -32,8 +33,8 @@
         "description": "Description",
         "imageUrl": "Hero image URL",
         "featured": "Featured",
-        "featureSwitch": "feature rentable cabin",
-        "error": "An error occured! Status:"
+        "featureSwitch": "Feature rentable cabin",
+        "createCabinError": "An error occured! Status:"
     },
 
     "error": {

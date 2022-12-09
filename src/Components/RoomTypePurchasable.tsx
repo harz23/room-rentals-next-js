@@ -9,7 +9,7 @@ type Props = {
 };
 
 export default function RoomTypePurchasable({ room }: Props) {
-  const t = useTranslations('room_purchasable');
+  const t = useTranslations('rooms.room_purchasable');
   const intl = useIntl();
 
   return (

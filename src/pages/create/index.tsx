@@ -17,6 +17,7 @@ type Props = {};
 export default function Rooms() {
   const sessionUser = useContext(AuthContext)
   const t = useTranslations("add_cabin");
+  
   const router = useRouter();
 
   const [submitPromise, setSubmitPromise] = usePromised<void, HttpError>();
@@ -88,7 +89,7 @@ export default function Rooms() {
         </form>
 
         <div className="mt-10">
-          {submitPromise.error && <Text>{t("error")} {submitPromise.error.status || "N/A"}</Text>}  
+          {submitPromise.error && <Text>{t("createCabinError")} {submitPromise.error.status || "N/A"}</Text>}  
         </div>
       </div>
     </>

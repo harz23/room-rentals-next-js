@@ -9,7 +9,7 @@ type Props = {
 };
 
 export default function RoomTypeAdvertised({room}: Props) {
-  const t = useTranslations('room_advertised'); 
+  const t = useTranslations('rooms.room_advertised'); 
 
   return (
     <>

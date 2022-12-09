@@ -18,7 +18,8 @@ type Props = {
 
 export default function Rooms({ rooms }: Props) {
   const [loading, setLoading] = useState(false);
-  const t = useTranslations('rooms'); 
+
+  const t = useTranslations('rooms');
 
   return <>
     <Head>

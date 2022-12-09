@@ -1,9 +1,8 @@
 import clsx from 'clsx';
-import { isEmptyObject } from 'cypress/types/jquery';
 import { useTranslations } from 'next-intl';
 import { useRouter } from "next/router";
 import { useContext, useEffect } from "react";
-import usePromised, { PromiseData } from "use-promised";
+import usePromised from "use-promised";
 import { AuthContext } from "../pages/_app";
 import { HttpError, StarService } from "../services";
 import { RentableRoom } from "../types";
@@ -21,7 +20,7 @@ type Props = {
 export default function RoomTypeRentable({room, setHasError}: Props) {
   const [submitPromise, setSubmitPromise] = usePromised<void, HttpError>()
   const sessionUser = useContext(AuthContext)
-  const t = useTranslations('room_rentable');
+  const t = useTranslations('rooms.room_rentable');
   const router = useRouter();
 
   useEffect(() => {
@@ -70,7 +69,7 @@ export default function RoomTypeRentable({room, setHasError}: Props) {
           <div className="flex items-center justify-between pr-2">
             
           <div className="flex gap-2">
-            <Avatar portraitUrl={room.owner.portraitUrl} />
+            <Avatar portraitUrl={room.owner.portraitUrl} userName={`${room.owner.firstName} ${room.owner.lastName}`} />
             
             <Text as="p" variant="p" color="secondary" className="ml-1 font-semibold flex items-center">
                 {room.owner.firstName}
@@ -80,12 +79,12 @@ export default function RoomTypeRentable({room, setHasError}: Props) {
              {sessionUser && <IconButton
                 onClick={() => {
                   const promise = StarService.post(room.id).then(() => {
-                    router.replace(router.asPath, undefined, {scroll: false})
+                    router.push(router.asPath, undefined, {scroll: false})
                   });
                   setSubmitPromise(promise);
                 }
               }
-              aria-label="Star"
+              aria-label={t("star")}
               className={clsx(submitPromise.pending && "opacity-50", "hover:bg-gray-100 rounded-full h-8 w-8 p-1")}
             >
               {sessionUser.starredRooms.includes(room.id) ? (

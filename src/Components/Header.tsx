@@ -36,7 +36,7 @@ export default function Header() {
 
             { sessionUser !== undefined &&
                 <div className="flex items-center gap-2">
-                    <Avatar portraitUrl={sessionUser.portraitUrl} variant="sessionUser"/>
+                    <Avatar portraitUrl={sessionUser.portraitUrl} variant="sessionUser" userName={`${sessionUser.firstName} ${sessionUser.lastName}`} />
                     
                     <div>
                         <Text as="h5" variant="h5" className="inline">{sessionUser.firstName} {sessionUser.lastName}</Text>

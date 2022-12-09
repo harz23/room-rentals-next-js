@@ -8,7 +8,7 @@ type Props = {
 
 export default function paginate({nodes, size, number}: Props) {
     const maxPage = Math.ceil(nodes.length / size)
-
+    
     if(number < 1) {
         number = 1
     }
