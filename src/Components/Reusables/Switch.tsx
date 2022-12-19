@@ -1,7 +1,6 @@
 import { blackA } from "@radix-ui/colors";
 import * as Switch from "@radix-ui/react-switch";
 import { styled } from "@stitches/react";
-import { useTranslations } from "next-intl";
 import { ButtonHTMLAttributes } from "react";
 
 type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
@@ -10,8 +9,7 @@ type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
 }
 
 export default function Switcher({name, ariaLabel, ...rest}: Props) {
-  const t = useTranslations("add_cabin");
-
+  
   const SwitchRoot = styled(Switch.Root, {
     all: "unset",
     width: 60,
@@ -42,7 +40,7 @@ export default function Switcher({name, ariaLabel, ...rest}: Props) {
 
   return (
     <>
-        <SwitchRoot id="airplane-mode" name={name} aria-label={ariaLabel} {...rest}>
+        <SwitchRoot name={name} aria-label={ariaLabel} {...rest}>
             <SwitchThumb />
         </SwitchRoot>
     </>

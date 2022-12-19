@@ -43,13 +43,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext): Pr
           size: 9,
           number: NumberParam.decode(context.query?.page) || 1
       }),
-      sessionUser: {
-        id: data.sessionUser.id,
-        firstName: data.sessionUser.firstName,
-        lastName: data.sessionUser.lastName,
-        portraitUrl: data.sessionUser.portraitUrl,
-        starredRooms: data.sessionUser.starredRooms
-      }
+      sessionUser: data.sessionUser
     },
   };
 }

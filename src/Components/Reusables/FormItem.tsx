@@ -9,8 +9,9 @@ type Props = {
 export default function FormItem({labelText, children}: Props) {
   return <>
       <label className="group">
-        <Text variant="label" className="group-focus-within:text-cyan-600">{labelText}</Text>
-        
+        <Text variant="label" className="group-focus-within:text-cyan-600">
+          {labelText}
+        </Text>
             {children}      
       </label>
     </>

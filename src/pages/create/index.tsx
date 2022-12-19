@@ -31,17 +31,19 @@ export default function Rooms() {
     const input = {
       "featured": formData.get("isFeatured")?.toString() === "on" ? true : false as boolean,
       "owner": {
-        "id": sessionUser?.id,
-        "firstName": sessionUser?.firstName,
-        "lastName": sessionUser?.lastName,
-        "portraitUrl": sessionUser?.portraitUrl
+        "id": sessionUser?.id as number,
+        "firstName": sessionUser?.firstName as string,
+        "lastName": sessionUser?.lastName as string,
+        "portraitUrl": sessionUser?.portraitUrl as string
       },
       "title": formData.get("title") as string,
       "description": formData.get("description") as string,
       "imageUrl": formData.get("imageUrl") as string
     }
 
-    const promise = RoomService.post(input).then(() => form.reset())
+    const promise = RoomService.post(input)
+                               .then(() => form.reset())
+                               
 
     setSubmitPromise(promise)
   }
@@ -51,10 +53,8 @@ export default function Rooms() {
       router.push("/rooms")
     }
   }, [router, submitPromise])
-
-                  
-  return (
-    <>
+         
+  return <>
       <Head>
         <title>{t("create_cabin_page_title")}</title>
       </Head>
@@ -67,15 +67,15 @@ export default function Rooms() {
         <form className="mt-12" onSubmit={onSubmit}>
           <div className="grid grid-cols-2 gap-x-10 gap-y-5">
             <FormItem labelText={t("title")}>
-              <FormInput name="title" ariaLabel={t("title")} disabled={submitPromise.pending} />
-            </FormItem>              
+              <FormInput name="title" ariaLabel={t("title")} disabled={submitPromise.pending} required />
+            </FormItem>
 
             <FormItem labelText={t("description")}>
-              <FormInput name="description" ariaLabel={t("description")} disabled={submitPromise.pending} />
+              <FormInput name="description" ariaLabel={t("description")} disabled={submitPromise.pending} required />
             </FormItem>       
 
             <FormItem labelText={t("imageUrl")}>
-              <FormInput name="imageUrl" ariaLabel={t("imageUrl")} disabled={submitPromise.pending} />
+              <FormInput name="imageUrl" ariaLabel={t("imageUrl")} disabled={submitPromise.pending} required />
             </FormItem>       
 
             <FormItem labelText={t("featured")}>
@@ -93,7 +93,6 @@ export default function Rooms() {
         </div>
       </div>
     </>
-  );
 }
 
 export async function getServerSideProps(
@@ -104,13 +103,7 @@ export async function getServerSideProps(
   return {
     props: {
       translation: (await import(`../../../translation/${context.locale}.json`)).default,
-      sessionUser: {
-        id: data.sessionUser.id,
-        firstName: data.sessionUser.firstName,
-        lastName: data.sessionUser.lastName,
-        portraitUrl: data.sessionUser.portraitUrl,
-        starredRooms: data.sessionUser.starredRooms,
-      },
+      sessionUser: data.sessionUser
     },
   };
 }

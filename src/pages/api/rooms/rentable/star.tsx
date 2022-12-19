@@ -1,7 +1,6 @@
-import { NextApiRequest, NextApiResponse } from "next";
 import { ReasonPhrases, StatusCodes } from "http-status-codes";
-import db from "../../db";
-import { Id } from "../../types";
+import { NextApiRequest, NextApiResponse } from "next";
+import db from "../../../../db";
 
 export default async function handler(
   req: NextApiRequest,

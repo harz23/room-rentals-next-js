@@ -21,10 +21,11 @@ export default async function handler(
 
   var urlPattern = new RegExp(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=!]*).jpg!d/gi);
 
-  if(req.body.title === "" || 
-     req.body.description === "" || 
-     req.body.imageUrl === "" ||
+  if(typeof req.body.title !== "string" && req.body.title === "" || 
+     typeof req.body.description !== "string" && req.body.description === "" || 
+     typeof req.body.imageUrl !== "string" && req.body.imageUrl === "" ||
      !urlPattern.test(req.body.imageUrl)) {
+      
       res.status(StatusCodes.BAD_REQUEST);
       res.json({ error: ReasonPhrases.BAD_REQUEST });
       return;
@@ -33,8 +34,8 @@ export default async function handler(
   const data = await db.read();
 
   const cabin: Room= {
-    "id": data.rooms[0].id + 1,
-    "featured": req.body.featured,
+    "id": data.rooms.length as number,
+    "featured": req.body.featured as boolean,
     "owner": {
       "id": req.body.owner.id as number,
       "firstName": req.body.owner.firstName as string,
